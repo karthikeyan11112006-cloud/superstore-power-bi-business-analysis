@@ -180,7 +180,8 @@ Provides detailed analysis of:
 
 ### Sales Performance Dashboard
 
-![Sales Performance Dashboard](Screenshots/01_Sales_Dashboard.png)
+![Sales Performance Dashboard](<img width="1360" height="768" alt="Screenshot 2026-09-07 213404" src="https://github.com/user-attachments/assets/1fcb4aa7-9180-4a53-b456-54dba4fccc5f" />
+)
 
 ### Profitability Analysis
 

@@ -1,142 +1,206 @@
-Superstore Business Performance & Profitability Analysis — Power BI
-Personal Data Analytics & Power BI Portfolio Project
-📌 Project Overview
-This project uses the Sample Superstore dataset to analyze business performance using Microsoft Power BI.
-The dashboard provides insights into:
-Sales
-Profit
-Orders
-Customers
-Products
-Categories
-Regions
-Customer Segments
-Shipping Modes
-Discounts
-Time-based performance
-🎯 Objectives
-Analyze overall sales and profitability.
-Track important business KPIs.
-Identify high- and low-performing categories and products.
-Analyze customer and regional performance.
-Compare sales and profit across different business areas.
-Create an interactive dashboard for business analysis.
-📊 Dataset
-Dataset: Sample Superstore
-Records: 9,994
-Fields: 21
-Period: 2014–2017
-Domain: Retail
-Main Fields
-Order ID
-Order Date
-Ship Date
-Ship Mode
-Customer ID
-Customer Name
-Segment
-Region
-Category
-Sub-Category
-Product Name
-Sales
-Quantity
-Discount
-Profit
-🛠️ Tools Used
-Microsoft Power BI Desktop
-Power Query
-DAX
-CSV Dataset
-🔄 Data Preparation
-The dataset was prepared in Power BI before analysis.
-Main activities included:
-Data inspection
-Data type checking
-Date preparation
-Numerical field preparation
-Order and customer calculations
-Preparing categorical fields for analysis
-Creating measures using DAX
-🧮 DAX Measures
-The project uses DAX measures for KPI and analytical calculations, including:
-Total Sales
-Total Profit
-Total Orders
-Total Customers
-Profit Margin %
-Average Order Value
-Profit PY
-Profit YoY %
-Customer Sales Rank
-Product Sales Rank
-The documented DAX formulas are reference/documentation formulas and are not claimed as a direct PBIX export.
-📈 Dashboard Pages
-1. Sales Dashboard
-Provides an overall view of:
-Sales
-Profit
-Orders
-Customers
-Sales trends
-Category performance
-Regional performance
-Shipping mode performance
-2. Profitability Analysis
-Focuses on:
-Profit
-Profit Margin
-Profit YoY
-Category profitability
-Sub-category profitability
-Product profitability
-Discount and profitability patterns
-3. Customer & Segment Analysis
+# Superstore Business Performance & Profitability Analysis — Power BI
+
+## 📌 Project Overview
+
+This is a **personal Power BI data analytics project** based on the Sample Superstore retail dataset.
+
+The project analyzes business performance using **sales, profit, orders, customers, products, categories, regions, customer segments, shipping modes, discounts, and time-based analysis**.
+
+An interactive **4-page Power BI dashboard** was created to convert raw transactional data into meaningful business insights.
+
+---
+
+## 📊 Dataset
+
+- **Dataset:** Sample Superstore
+- **Records:** 9,994
+- **Fields:** 21
+- **Period:** 2014–2017
+- **Domain:** Retail
+- **Data Level:** Transaction / Order-Line Level
+- **File Type:** CSV
+
+### Main Data Fields
+
+`Order ID` • `Order Date` • `Ship Date` • `Ship Mode` • `Customer ID` • `Customer Name` • `Segment` • `Region` • `Category` • `Sub-Category` • `Product Name` • `Sales` • `Quantity` • `Discount` • `Profit`
+
+---
+
+## 🎯 Project Objectives
+
+- Analyze overall sales and profit performance.
+- Track important business KPIs.
+- Identify high- and low-performing categories and products.
+- Analyze customer and regional performance.
+- Compare customer segments and shipping modes.
+- Examine discount and profitability patterns.
+- Identify business trends and generate recommendations.
+
+---
+
+## 🛠️ Tools Used
+
+- **Microsoft Power BI Desktop**
+- **Power Query**
+- **DAX**
+- **CSV Dataset**
+
+---
+
+## 🔄 Data Preparation
+
+The dataset was prepared in Power BI using Power Query.
+
+Main preparation activities included:
+
+- Data inspection
+- Data type checking
+- Date preparation
+- Numerical field preparation
+- Customer and order identification
+- Preparing categorical fields for analysis
+- Preparing data for DAX calculations and visualizations
+
+---
+
+## 🧮 Key DAX Measures
+
+The dashboard uses DAX measures for KPI calculations and analysis, including:
+
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Customers
+- Profit Margin %
+- Average Order Value
+- Profit PY
+- Profit YoY %
+- Customer Sales Rank
+
+---
+
+## 📈 Dashboard
+
+### 1. Sales Performance Dashboard
+
+Provides an overview of business performance through:
+
+- Total Sales
+- Total Profit
+- Total Orders
+- Total Customers
+- Profit Margin
+- Average Order Value
+- Sales trends
+- Category performance
+- Regional performance
+- Shipping mode analysis
+
+### 2. Profitability Analysis
+
+Focuses on profitability through:
+
+- Profit by Sub-Category
+- Sales vs Profit by Category
+- Product profitability
+- Discount vs Profitability
+- Profit Margin
+- Profit YoY
+
+### 3. Customer & Segment Analysis
+
 Analyzes:
-Customer segments
-Customer sales
-Customer profit
-Customer performance
-Top 10 customers
-The Top 10 Customers funnel-style visual represents ranking/concentration, not sales conversion.
-4. Customer & Product Details
+
+- Customer segments
+- Sales by segment
+- Profit by segment
+- Customer performance
+- Top 10 customers by sales
+
+> The Top 10 Customers funnel-style visual is used for **ranking/concentration analysis**, not sales conversion.
+
+### 4. Customer & Product Details
+
 Provides detailed analysis of:
-Customers
-Products
-Categories
-Sales
-Profit
-Quantity
-Discount
-🔍 Key Insights
-Technology is a strong contributor to both sales and profit.
-Furniture has significant sales but comparatively lower profit.
-West has the highest displayed regional sales.
-Consumer is the largest customer segment.
-Standard Class has the highest displayed sales among shipping modes.
-Some products generate negative profit despite having sales.
-Discount and profitability show an observed pattern that requires further investigation; the dashboard does not establish causation.
-💡 Business Recommendations
-Review low-profit product and sub-category performance.
-Investigate Furniture profitability.
-Monitor strong Technology performance.
-Investigate lower-performing regions.
-Evaluate customers using both sales and profit.
-Review discount strategies alongside profitability.
-Analyze shipping costs before making shipping profitability decisions.
-🖼️ Dashboard Screenshots
-Sales Dashboard
-�
-Profitability Analysis
-�
-Customer & Segment Analysis
-�
-Customer & Product Details
-�
-📁 Repository Structure
-Superstore-PowerBI-Business-Analysis/
+
+- Customers
+- Products
+- Categories
+- Sub-Categories
+- Sales
+- Profit
+- Quantity
+- Discount
+
+---
+
+## 📌 Key Metrics
+
+| Metric | Value |
+|---|---:|
+| Total Sales | **$2M** |
+| Total Profit | **$286K** |
+| Total Orders | **5K** |
+| Total Customers | **793** |
+| Profit Margin | **12.5%** |
+| Average Order Value | **$459** |
+| Profit YoY | **14.2%** |
+
+*Values are displayed in rounded form as shown in the dashboard.*
+
+---
+
+## 🔍 Key Insights
+
+- **Technology** is a strong contributor to both sales and profit.
+- **Furniture** generates high sales but comparatively lower profit.
+- **West** has the highest displayed regional sales.
+- **Consumer** is the largest customer segment.
+- **Standard Class** has the highest displayed sales among shipping modes.
+- Some products generate negative profit despite generating sales.
+- Discount and profitability show an observed pattern that requires further investigation.
+
+> The discount analysis shows an association/pattern and does not prove that discounts cause lower profit.
+
+---
+
+## 💡 Business Recommendations
+
+- Review low-profit Furniture products and sub-categories.
+- Continue monitoring strong Technology performance.
+- Investigate the lower sales performance of the South region.
+- Monitor Consumer customers and their profitability.
+- Review products generating negative profit.
+- Evaluate discounts together with profit and margin.
+- Analyze shipping costs before making shipping profitability decisions.
+
+---
+
+## 🖼️ Dashboard Screenshots
+
+### Sales Performance Dashboard
+
+![Sales Performance Dashboard](Screenshots/01_Sales_Dashboard.png)
+
+### Profitability Analysis
+
+![Profitability Analysis](Screenshots/02_Profitability_Analysis.png)
+
+### Customer & Segment Analysis
+
+![Customer & Segment Analysis](Screenshots/03_Customer_Segment_Analysis.png)
+
+### Customer & Product Details
+
+![Customer & Product Details](Screenshots/04_Customer_Product_Details.png)
+
+---
+
+## 📁 Repository Structure
+
+```text
+superstore-power-bi-business-analysis/
 │
-├── README.md
 ├── Dataset/
 │   └── Sample_Superstore.csv
 │
@@ -146,41 +210,10 @@ Superstore-PowerBI-Business-Analysis/
 ├── Report/
 │   └── Superstore_PowerBI_Project_Report.pdf
 │
-└── Screenshots/
-    ├── 01_Sales_Dashboard.png
-    ├── 02_Profitability_Analysis.png
-    ├── 03_Customer_Segment_Analysis.png
-    └── 04_Customer_Product_Details.png
-▶️ How to Use
-Download or clone this repository.
-Open the .pbix file in Power BI Desktop.
-Update the dataset path if required.
-Refresh the data.
-Explore the four dashboard pages.
-Use the slicers and interactive visuals.
-Refer to the PDF report for detailed documentation.
-⚠️ Limitations
-The project uses the Sample Superstore portfolio dataset.
-Data covers 2014–2017.
-The analysis is mainly descriptive.
-Detailed inventory, returns, budget, target, and shipping-cost analysis is not included.
-Discount-profit relationships should not be interpreted as causal.
-🔮 Future Scope
-Potential Future Work:
-Additional time-intelligence analysis
-Target and budget analysis
-Advanced customer segmentation
-Forecasting
-Shipping-cost analysis
-Delivery-time analysis
-Power BI Service deployment
-Automated refresh
-👤 Author
-Karthi Keyan
-Aspiring Data Analyst
-GitHub: [Add GitHub Profile]
-LinkedIn: [Add LinkedIn Profile]
-Email: [Add Professional Email]
-📄 Resume Description
-Developed a Power BI dashboard using the Sample Superstore dataset, applying Power Query and DAX for KPI, sales, profitability, customer, product, and regional analysis.
-Created interactive visualizations and dashboards to identify business performance patterns and generate data-driven business insights and recommendations.
+├── Screenshots/
+│   ├── 01_Sales_Dashboard.png
+│   ├── 02_Profitability_Analysis.png
+│   ├── 03_Customer_Segment_Analysis.png
+│   └── 04_Customer_Product_Details.png
+│
+└── README.md

@@ -176,27 +176,6 @@ Provides detailed analysis of:
 
 ---
 
-## 🖼️ Dashboard Screenshots
-
-### Sales Performance Dashboard
-
-![Sales Performance Dashboard](<img width="1360" height="768" alt="Screenshot 2026-09-07 213404" src="https://github.com/user-attachments/assets/1fcb4aa7-9180-4a53-b456-54dba4fccc5f" />
-)
-
-### Profitability Analysis
-
-![Profitability Analysis](Screenshots/02_Profitability_Analysis.png)
-
-### Customer & Segment Analysis
-
-![Customer & Segment Analysis](Screenshots/03_Customer_Segment_Analysis.png)
-
-### Customer & Product Details
-
-![Customer & Product Details](Screenshots/04_Customer_Product_Details.png)
-
----
-
 ## 📁 Repository Structure
 
 ```text

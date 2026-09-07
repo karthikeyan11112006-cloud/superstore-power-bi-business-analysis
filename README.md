@@ -175,7 +175,16 @@ Provides detailed analysis of:
 - Analyze shipping costs before making shipping profitability decisions.
 
 ---
+## 📊 Dashboard
 
+The project includes four Power BI dashboard pages:
+
+1. Sales Performance Dashboard
+2. Profitability Analysis
+3. Customer & Segment Analysis
+4. Customer & Product Details
+
+Dashboard screenshots are available in the `Screenshots/` folder.
 ## 📁 Repository Structure
 
 ```text

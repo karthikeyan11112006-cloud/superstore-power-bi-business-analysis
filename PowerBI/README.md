@@ -94,7 +94,6 @@ The dashboard uses DAX measures for KPI and analytical calculations, including:
 - Profit PY
 - Profit YoY %
 - Customer Sales Rank
-- Product Sales Rank
 
 ## 🎛️ Interactive Features
 

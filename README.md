@@ -1,368 +1,130 @@
-# Superstore Business Performance & Profitability Analysis — Power BI
-
-![Power BI](https://img.shields.io/badge/Power%20BI-Data%20Analytics-yellow)
-![DAX](https://img.shields.io/badge/DAX-Measures-blue)
-![Power Query](https://img.shields.io/badge/Power%20Query-Data%20Preparation-green)
-![Excel](https://img.shields.io/badge/Excel-Dataset-brightgreen)
-
-## 1. Project Title
-
-**Superstore Business Performance & Profitability Analysis**
-
-A personal Power BI project focused on analyzing retail sales, profitability, customers, products, regions, segments, discounts and shipping performance.
-
----
-
-## 2. Project Overview
-
-This project uses the Sample Superstore transactional dataset to develop an interactive **4-page Power BI dashboard**.
-
-The dashboard converts transactional data into business-focused insights using:
-
-- Power Query for data preparation
-- DAX for analytical measures
-- KPI cards
-- Interactive slicers
-- Time-based analysis
-- Category and regional analysis
-- Customer and segment analysis
-- Product-level analysis
-- Profitability analysis
-- Ranking and comparison visuals
-
-The objective is to make the dataset easier to understand and support data-driven business interpretation.
-
----
-
-## 3. Business Problem
-
-Retail transaction data contains valuable information about sales, profit, customers, products and operations, but raw transactional data can be difficult to interpret.
-
-This project addresses the following business questions:
-
-- How are overall sales and profit performing?
-- Which categories generate the most sales and profit?
-- Which regions contribute the most sales?
-- Which customer segments are the largest?
-- Which customers generate the highest sales?
-- Which products are strong or weak in profitability?
-- How does discounting appear alongside profitability?
-- Which shipping modes contribute most to sales?
-- How do sales change over time?
-
----
-
-## 4. Objectives
-
-The main objectives of the project are:
-
-1. Analyze overall sales and profitability.
-2. Develop important business KPIs.
-3. Compare sales performance across categories and regions.
-4. Analyze customer segments and customer-level performance.
-5. Identify profitable and loss-making products and sub-categories.
-6. Examine discount and profitability patterns.
-7. Analyze shipping mode performance.
-8. Create an interactive Power BI dashboard.
-9. Generate business insights and recommendations from the analysis.
-
----
-
-## 5. Dataset
-
-The project uses the **Sample Superstore** transactional dataset.
-
-### Dataset Details
-
-| Attribute | Details |
-|---|---|
-| Dataset | Sample Superstore |
-| Records | 9,994 |
-| Fields | 21 |
-| Period | 2014–2017 |
-| Granularity | Transaction / order-line level |
-| Business Domain | Retail / Superstore |
-
-### Main Dataset Fields
-
-**Order & Shipping**
-- Row ID
-- Order ID
-- Order Date
-- Ship Date
-- Ship Mode
-
-**Customer**
-- Customer ID
-- Customer Name
-- Segment
-
-**Geography**
-- Country
-- City
-- State
-- Postal Code
-- Region
-
-**Product**
-- Product ID
-- Category
-- Sub-Category
-- Product Name
-
-**Business Measures**
-- Sales
-- Quantity
-- Discount
-- Profit
-
----
-
-## 6. Tools & Technologies
-
-### Tools Used
-
-- **Microsoft Power BI Desktop**
-- **Power Query**
-- **DAX**
-- **Microsoft Excel**
-- **Data Visualization**
-- **Data Modeling**
-
-### Power BI Features
-
-- KPI Cards
-- Slicers
-- Bar Charts
-- Line/Area Charts
-- Pie/Donut Charts
-- Scatter Plot
-- Tables
-- Ranking Visuals
-- Cross-filtering
-- Page Navigation
-- Reset Filters
-
----
-
-## 7. Data Preparation
-
-The project follows an end-to-end data analytics workflow:
-
-```text
-Raw Dataset
-     ↓
-Data Import
-     ↓
-Data Inspection
-     ↓
-Data Preparation
-     ↓
-Data Modeling
-     ↓
-DAX Measures
-     ↓
-Dashboard Development
-     ↓
-Interactive Analysis
-     ↓
-Business Insights
-Preparation Activities
-Inspected the dataset structure.
-Reviewed column names and data types.
-Prepared date fields for time-based analysis.
-Ensured numerical fields were suitable for calculations.
-Used distinct Order ID for order-level KPI analysis.
-Used distinct Customer ID for customer-level KPI analysis.
-Created reusable DAX measures for dashboard KPIs.
-Validated the final dashboard against the source dataset.
-8. Data Model
-The Superstore transaction data is used as the main analytical dataset.
-A Date table is used in the documented time-intelligence calculation for prior-year profit analysis.
-The analytical structure supports:
-Sales analysis
-Profit analysis
-Time analysis
-Customer analysis
-Product analysis
-Category analysis
-Regional analysis
-Segment analysis
-Shipping analysis
-9. DAX Measures
-The project uses DAX to create reusable analytical measures.
-Note: The measures below are documented/reference implementations for the project. They are provided for transparency and should not be interpreted as a binary export of the PBIX model.
-Total Sales
-Total Sales =
-SUM('Superstore'[Sales])
-Total Profit
-Total Profit =
-SUM('Superstore'[Profit])
-Total Orders
-Total Orders =
-DISTINCTCOUNT('Superstore'[Order ID])
-Total Customers
-Total Customers =
-DISTINCTCOUNT('Superstore'[Customer ID])
-Profit Margin %
-Profit Margin % =
-DIVIDE([Total Profit], [Total Sales], 0)
-Average Order Value
-Average Order Value =
-DIVIDE([Total Sales], [Total Orders], 0)
-Prior-Year Profit
-Profit PY =
-CALCULATE(
-    [Total Profit],
-    DATEADD('Date'[Date], -1, YEAR)
-)
-Profit YoY %
-Profit YoY % =
-DIVIDE(
-    [Total Profit] - [Profit PY],
-    [Profit PY],
-    0
-)
-Customer Sales Rank
-Customer Sales Rank =
-RANKX(
-    ALL('Superstore'[Customer Name]),
-    [Total Sales],
-    ,
-    DESC,
-    DENSE
-)
-10. Dashboard Pages
-The Power BI report contains four analytical pages.
-Page 1 — Sales Analysis
-The Sales Analysis page provides an executive-level overview of business performance.
-KPIs
-Total Sales
-Total Profit
-Total Orders
-Total Customers
-Profit Margin %
-Average Order Value
-Visuals
-Monthly Sales Trend
-Sales by Category
-Sales by Region
-Sales by Ship Mode
-KPI Cards
-Year Slicer
-Region Slicer
-Category Slicer
-Segment Slicer
-Reset Filters control
-Page 2 — Profitability Analysis
-This page focuses on financial performance and profitability.
-Visuals
-Profit by Sub-Category
-Sales vs Profit by Category
-Profit Margin %
-Profit YoY %
-Discount vs Profitability Scatter Plot
-Top Products Table
-The page helps identify areas where strong sales do not necessarily translate into strong profit.
-Page 3 — Customer & Segment Analysis
-This page focuses on customer and segment performance.
-Visuals
-Profit by Customer Segment
-Sales by Customer Segment
-Customer Performance Table
-Top 10 Customers Ranking
-Customer KPI Cards
-The Top 10 Customers visual is used as a ranking/concentration view, not as a traditional sales conversion funnel.
-Page 4 — Customer & Product Details
-This page provides more granular product and category-level analysis.
-Visuals
-Top Products Table
-Sales by Category
-Monthly Sales Trend
-Profit by Category
-KPI Cards
-The product table combines Sales, Profit, Quantity and Discount to support product-level analysis.
-11. Key Insights
-Overall Performance
-The validated dataset contains approximately:
-$2.30M Total Sales
-$286.40K Total Profit
-5,009 Distinct Orders
-793 Distinct Customers
-12.47% Calculated Profit Margin
-$458.61 Average Sales per Distinct Order
-Category Performance
-Technology is the strongest category by sales and profit.
-Furniture generates substantial sales but has a comparatively lower profit contribution.
-Office Supplies contributes meaningful sales and profit.
-Regional Performance
-West is the highest-sales region.
-East is another strong contributor.
-South has the lowest sales among the four regions.
-Customer Segment
-Consumer is the largest customer segment by sales.
-Corporate and Home Office contribute additional revenue.
-Shipping
-Standard Class is the dominant shipping mode by sales.
-Product Profitability
-The product-level analysis shows that high sales do not automatically mean high profit.
-Some products generate meaningful sales while producing negative profit, highlighting the importance of evaluating both revenue and profitability.
-Discount Analysis
-The discount-versus-profitability visual provides a pattern for further investigation. It should not be interpreted as proof that discounting directly causes lower profit.
-12. Business Recommendations
-1. Review Furniture Profitability
-Investigate pricing, procurement costs and discount levels within Furniture and weaker sub-categories.
-2. Protect Technology Performance
-Maintain product availability and competitive pricing for strong Technology products while continuing to monitor profitability.
-3. Investigate South Region Performance
-Compare product mix, customer mix, discounts and order values between South and stronger-performing regions.
-4. Focus on Consumer Customer Retention
-Since Consumer is the largest segment, retention and cross-selling opportunities can be explored within this customer group.
-5. Review Loss-Making Products
-Products with negative profit should be investigated for pricing, discount and cost issues.
-6. Evaluate Discounts Alongside Profit
-Discount decisions should consider profit impact rather than focusing only on sales volume.
-7. Review Shipping Economics
-Shipping modes can be evaluated using both sales performance and operational cost information when available.
-13. Project Results
-The project resulted in:
-A 4-page interactive Power BI dashboard
-Reusable DAX measures
-KPI-based performance monitoring
-Sales and profitability analysis
-Customer and segment analysis
-Product-level analysis
-Regional analysis
-Shipping analysis
-Interactive slicers
-Cross-filtering
-Dashboard navigation
-Business insights
-Business recommendations
-Portfolio-ready documentation
-14. Skills Demonstrated
-Technical Skills
-Microsoft Power BI
+Superstore Business Performance & Profitability Analysis — Power BI
+Personal Data Analytics & Power BI Portfolio Project
+📌 Project Overview
+This project uses the Sample Superstore dataset to analyze business performance using Microsoft Power BI.
+The dashboard provides insights into:
+Sales
+Profit
+Orders
+Customers
+Products
+Categories
+Regions
+Customer Segments
+Shipping Modes
+Discounts
+Time-based performance
+🎯 Objectives
+Analyze overall sales and profitability.
+Track important business KPIs.
+Identify high- and low-performing categories and products.
+Analyze customer and regional performance.
+Compare sales and profit across different business areas.
+Create an interactive dashboard for business analysis.
+📊 Dataset
+Dataset: Sample Superstore
+Records: 9,994
+Fields: 21
+Period: 2014–2017
+Domain: Retail
+Main Fields
+Order ID
+Order Date
+Ship Date
+Ship Mode
+Customer ID
+Customer Name
+Segment
+Region
+Category
+Sub-Category
+Product Name
+Sales
+Quantity
+Discount
+Profit
+🛠️ Tools Used
+Microsoft Power BI Desktop
 Power Query
 DAX
-Data Preparation
-Data Modeling
-KPI Development
-Data Visualization
-Time-Series Analysis
-Ranking Analysis
-Interactive Dashboard Development
-Analytical Skills
-Sales Analysis
-Profitability Analysis
-Customer Analysis
-Product Analysis
-Regional Analysis
-Segment Analysis
-Discount Analysis
-Business Insight Generation
-Recommendation Development
-15. Screenshots
+CSV Dataset
+🔄 Data Preparation
+The dataset was prepared in Power BI before analysis.
+Main activities included:
+Data inspection
+Data type checking
+Date preparation
+Numerical field preparation
+Order and customer calculations
+Preparing categorical fields for analysis
+Creating measures using DAX
+🧮 DAX Measures
+The project uses DAX measures for KPI and analytical calculations, including:
+Total Sales
+Total Profit
+Total Orders
+Total Customers
+Profit Margin %
+Average Order Value
+Profit PY
+Profit YoY %
+Customer Sales Rank
+Product Sales Rank
+The documented DAX formulas are reference/documentation formulas and are not claimed as a direct PBIX export.
+📈 Dashboard Pages
+1. Sales Dashboard
+Provides an overall view of:
+Sales
+Profit
+Orders
+Customers
+Sales trends
+Category performance
+Regional performance
+Shipping mode performance
+2. Profitability Analysis
+Focuses on:
+Profit
+Profit Margin
+Profit YoY
+Category profitability
+Sub-category profitability
+Product profitability
+Discount and profitability patterns
+3. Customer & Segment Analysis
+Analyzes:
+Customer segments
+Customer sales
+Customer profit
+Customer performance
+Top 10 customers
+The Top 10 Customers funnel-style visual represents ranking/concentration, not sales conversion.
+4. Customer & Product Details
+Provides detailed analysis of:
+Customers
+Products
+Categories
+Sales
+Profit
+Quantity
+Discount
+🔍 Key Insights
+Technology is a strong contributor to both sales and profit.
+Furniture has significant sales but comparatively lower profit.
+West has the highest displayed regional sales.
+Consumer is the largest customer segment.
+Standard Class has the highest displayed sales among shipping modes.
+Some products generate negative profit despite having sales.
+Discount and profitability show an observed pattern that requires further investigation; the dashboard does not establish causation.
+💡 Business Recommendations
+Review low-profit product and sub-category performance.
+Investigate Furniture profitability.
+Monitor strong Technology performance.
+Investigate lower-performing regions.
+Evaluate customers using both sales and profit.
+Review discount strategies alongside profitability.
+Analyze shipping costs before making shipping profitability decisions.
+🖼️ Dashboard Screenshots
 Sales Dashboard
 �
 Profitability Analysis
@@ -371,49 +133,54 @@ Customer & Segment Analysis
 �
 Customer & Product Details
 �
-16. Repository Structure
-superstore-power-bi-business-analysis/
+📁 Repository Structure
+Superstore-PowerBI-Business-Analysis/
 │
 ├── README.md
-│
-├── Report/
-│   └── Superstore_PowerBI_Project_Report.pdf
+├── Dataset/
+│   └── Sample_Superstore.csv
 │
 ├── PowerBI/
 │   └── Superstore_PowerBI_Dashboard.pbix
 │
-├── Dataset/
-│   └── Sample_Superstore.xlsx
+├── Report/
+│   └── Superstore_PowerBI_Project_Report.pdf
 │
 └── Screenshots/
     ├── 01_Sales_Dashboard.png
     ├── 02_Profitability_Analysis.png
     ├── 03_Customer_Segment_Analysis.png
     └── 04_Customer_Product_Details.png
-17. How to Use the Project
-Clone or download the repository.
-Open the .pbix file using Power BI Desktop.
-If required, update the dataset source path.
+▶️ How to Use
+Download or clone this repository.
+Open the .pbix file in Power BI Desktop.
+Update the dataset path if required.
 Refresh the data.
-Use the slicers to filter the analysis.
-Navigate between the four dashboard pages.
-Review the DAX measures documented in this README.
-Refer to the detailed project report for methodology and analysis.
-18. Limitations
-The Sample Superstore dataset is a portfolio/learning dataset.
-It does not represent current real-world company performance.
-Detailed inventory, returns, targets, budgets and logistics costs are not available.
-Discount and profitability relationships should not be interpreted as causal without further analysis.
-Some dashboard KPI values are displayed in rounded form for presentation purposes.
-19. Future Scope
-Potential future work only:
-Add richer time-intelligence measures such as Sales YoY, YTD and rolling performance.
-Add product and sub-category profit-margin flags.
-Add targets and budget variance analysis when target data is available.
-Add shipping cost and delivery-time analysis when operational data is available.
-Add automated refresh and Power BI Service deployment.
-20. Author / Contact
-Author: [karthikeyan]
-Role: Aspiring Data Analyst
-LinkedIn:[https://www.linkedin.com/in/karthi-keyan-a95b8b316]
-Email: [karthikeyan11112006@gmail.com]
+Explore the four dashboard pages.
+Use the slicers and interactive visuals.
+Refer to the PDF report for detailed documentation.
+⚠️ Limitations
+The project uses the Sample Superstore portfolio dataset.
+Data covers 2014–2017.
+The analysis is mainly descriptive.
+Detailed inventory, returns, budget, target, and shipping-cost analysis is not included.
+Discount-profit relationships should not be interpreted as causal.
+🔮 Future Scope
+Potential Future Work:
+Additional time-intelligence analysis
+Target and budget analysis
+Advanced customer segmentation
+Forecasting
+Shipping-cost analysis
+Delivery-time analysis
+Power BI Service deployment
+Automated refresh
+👤 Author
+Karthi Keyan
+Aspiring Data Analyst
+GitHub: [Add GitHub Profile]
+LinkedIn: [Add LinkedIn Profile]
+Email: [Add Professional Email]
+📄 Resume Description
+Developed a Power BI dashboard using the Sample Superstore dataset, applying Power Query and DAX for KPI, sales, profitability, customer, product, and regional analysis.
+Created interactive visualizations and dashboards to identify business performance patterns and generate data-driven business insights and recommendations.

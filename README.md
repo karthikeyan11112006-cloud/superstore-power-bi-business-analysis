@@ -191,7 +191,7 @@ Dashboard screenshots are available in the `Screenshots/` folder.
 superstore-power-bi-business-analysis/
 │
 ├── Dataset/
-│   └── Sample_Superstore.csv
+│   └── Sample_Superstore.xlsm
 │
 ├── PowerBI/
 │   └── Superstore_PowerBI_Dashboard.pbix

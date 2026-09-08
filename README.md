@@ -18,7 +18,7 @@ An interactive **4-page Power BI dashboard** was created to convert raw transact
 - **Period:** 2014–2017
 - **Domain:** Retail
 - **Data Level:** Transaction / Order-Line Level
-- **File Type:** CSV
+- **File Type:** xlsm
 
 ### Main Data Fields
 

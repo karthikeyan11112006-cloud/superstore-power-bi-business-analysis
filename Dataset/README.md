@@ -11,7 +11,7 @@ The dataset contains transactional retail information used to analyze sales, pro
 | Attribute | Details |
 |---|---|
 | Dataset Name | Sample Superstore |
-| File Type | CSV |
+| File Type | xlsm |
 | Records | 9,994 |
 | Fields | 21 |
 | Date Range | 2014–2017 |
@@ -80,4 +80,4 @@ This is a sample/portfolio dataset used for educational and data analytics purpo
 
 ```text
 Dataset/
-└── Sample_Superstore.csv
+└── Sample_Superstore.xlsm
